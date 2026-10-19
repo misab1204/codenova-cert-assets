@@ -1,0 +1,190 @@
+<!-- 
+  Twisted Golden Satin Ribbon — 3D Fold Depth & Shading
+  Restores the deep warm bronze/amber fold shadow while keeping seamless contours
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="-385 0 1570 880"
+     width="504" height="280"
+     preserveAspectRatio="xMaxYMin meet">
+
+  <defs>
+    <!-- Upper band: smooth satin gold — bright top fading gently to warm mid-gold -->
+    <linearGradient id="upper" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="300">
+      <stop offset="0"    stop-color="#fffce0"/>
+      <stop offset="0.18" stop-color="#fef0a0"/>
+      <stop offset="0.40" stop-color="#f8d858"/>
+      <stop offset="0.62" stop-color="#dea820"/>
+      <stop offset="0.82" stop-color="#b07818"/>
+      <stop offset="1"    stop-color="#8a5c08"/>
+    </linearGradient>
+
+    <!-- Upper band satin sheen: smooth horizontal highlight sweep -->
+    <linearGradient id="upperSheen" gradientUnits="userSpaceOnUse" x1="-370" y1="40" x2="660" y2="190">
+      <stop offset="0"    stop-color="#c09020" stop-opacity="0.5"/>
+      <stop offset="0.12" stop-color="#fff8d0" stop-opacity="0.9"/>
+      <stop offset="0.30" stop-color="#fce878" stop-opacity="0.45"/>
+      <stop offset="0.52" stop-color="#fff9e8" stop-opacity="0.85"/>
+      <stop offset="0.72" stop-color="#f2c230" stop-opacity="0.5"/>
+      <stop offset="0.88" stop-color="#fef6c0" stop-opacity="0.85"/>
+      <stop offset="1"    stop-color="#c09020" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Lip / underside curl: rich dark bronze & warm amber inside the loop -->
+    <linearGradient id="lip" gradientUnits="userSpaceOnUse" x1="560" y1="130" x2="710" y2="280">
+      <stop offset="0"    stop-color="#c88020"/>
+      <stop offset="0.25" stop-color="#9a5a0c"/>
+      <stop offset="0.55" stop-color="#6a3805"/>
+      <stop offset="0.85" stop-color="#3d1e02"/>
+      <stop offset="1"    stop-color="#241001"/>
+    </linearGradient>
+
+    <!-- Fold Face: rich dark amber / bronze shadow that defines the deep 3D twist -->
+    <linearGradient id="foldFace" gradientUnits="userSpaceOnUse" x1="480" y1="260" x2="570" y2="430">
+      <stop offset="0"    stop-color="#4a2603"/>
+      <stop offset="0.18" stop-color="#7a4208"/>
+      <stop offset="0.40" stop-color="#b06e12"/>
+      <stop offset="0.65" stop-color="#dea022"/>
+      <stop offset="0.88" stop-color="#f8d858"/>
+      <stop offset="1"    stop-color="#fff8d0"/>
+    </linearGradient>
+
+    <!-- Deep crease shadow under the upper flap lip -->
+    <linearGradient id="creaseShadow" gradientUnits="userSpaceOnUse" x1="440" y1="270" x2="500" y2="350">
+      <stop offset="0"    stop-color="#1f0c01" stop-opacity="0.85"/>
+      <stop offset="0.45" stop-color="#3d1b02" stop-opacity="0.5"/>
+      <stop offset="1"    stop-color="#603004" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Lower band: unified bright gold with depth across the sweep -->
+    <linearGradient id="lower" gradientUnits="userSpaceOnUse" x1="290" y1="320" x2="290" y2="840">
+      <stop offset="0"    stop-color="#dea820"/>
+      <stop offset="0.15" stop-color="#f8d858"/>
+      <stop offset="0.42" stop-color="#fff8d0"/>
+      <stop offset="0.68" stop-color="#f5ca40"/>
+      <stop offset="0.85" stop-color="#c88818"/>
+      <stop offset="1"    stop-color="#8a5808"/>
+    </linearGradient>
+
+    <!-- Left turn shadow overlay: warm metallic bronze defining the cylinder curve of the crest -->
+    <linearGradient id="leftTurnShadow" gradientUnits="userSpaceOnUse" x1="280" y1="480" x2="420" y2="520">
+      <stop offset="0"    stop-color="#3d1e02" stop-opacity="0.82"/>
+      <stop offset="0.18" stop-color="#6a3805" stop-opacity="0.6"/>
+      <stop offset="0.45" stop-color="#b06e12" stop-opacity="0.25"/>
+      <stop offset="0.80" stop-color="#dea022" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Specular highlight band running vertically along the crest just past the shadow -->
+    <linearGradient id="leftTurnSheen" gradientUnits="userSpaceOnUse" x1="320" y1="440" x2="440" y2="520">
+      <stop offset="0"    stop-color="#fff8d0" stop-opacity="0"/>
+      <stop offset="0.30" stop-color="#fffce0" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#fff8d0" stop-opacity="0.3"/>
+      <stop offset="1"    stop-color="#dea022" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Soft ambient occlusion in the inner hollow of the loop -->
+    <linearGradient id="curlHollow" gradientUnits="userSpaceOnUse" x1="560" y1="200" x2="680" y2="280">
+      <stop offset="0" stop-color="#241201" stop-opacity="0.85"/>
+      <stop offset="0.6" stop-color="#4a2603" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#4a2603" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Overall ribbon drop shadow -->
+    <filter id="ribbonShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="-6" dy="10" stdDeviation="18" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#ribbonShadow)">
+
+    <!-- LAYER 1 (BACK): LOWER BAND — sweeps to the right edge -->
+    <path fill="url(#lower)"
+      d="M395 325
+         C440 350 500 390 592 421
+         C700 448 900 475 1060 502 L1185 522
+         L1185 866
+         C1120 822 1050 765 940 745
+         C820 725 690 720 590 703
+         C500 688 410 660 345 622
+         C300 590 280 540 295 500
+         C310 440 350 380 400 335 Z"/>
+
+    <!-- Dark bronze shadow along the curved left crest (gives cylindrical depth) -->
+    <path fill="url(#leftTurnShadow)"
+      d="M 400 335
+         C 350 380 310 440 295 500
+         C 280 540 300 590 345 622
+         C 380 610 410 565 425 505
+         C 435 445 420 380 400 335 Z"/>
+
+    <!-- Bright specular sheen band along the turn -->
+    <path fill="url(#leftTurnSheen)"
+      d="M 405 345
+         C 365 390 335 445 325 500
+         C 315 540 330 580 365 610
+         C 400 595 425 550 435 500
+         C 440 450 425 390 405 345 Z"/>
+
+    <!-- LAYER 2 (MIDDLE-BACK): TRANSITION STRIP WITH RICH 3D FOLD SHADING
+         Has the dark bronze / amber shadow at the fold, fading smoothly into gold at the bottom -->
+    <path fill="url(#foldFace)"
+      d="M 400 335
+         C 430 350 460 368 495 392
+         C 540 412 575 422 605 425
+         C 635 375 668 310 690 245
+         C 665 262 640 276 600 280
+         C 560 282 520 272 482 266
+         C 450 275 425 305 400 335 Z"/>
+
+    <!-- Cast shadow right under the upper flap crease for extra 3D depth -->
+    <path fill="url(#creaseShadow)"
+      d="M 398 335
+         C 435 315 470 290 520 278
+         C 560 282 600 280 600 280
+         C 570 300 530 325 480 345
+         C 440 360 410 350 398 335 Z"/>
+
+    <!-- LAYER 3 (MIDDLE): ORANGE / BRONZE UNDERSIDE CURL at right end of upper flap
+         Outer curve precisely matches upper flap outer contour — zero gap or double edge -->
+    <path fill="url(#lip)"
+      d="M 650 130
+         C 685 145 706 168 708 195
+         C 706 235 690 262 600 280
+         C 588 282 578 282 570 280
+         C 592 235 615 175 650 130 Z"/>
+
+    <!-- Soft ambient occlusion in the inner hollow of the loop -->
+    <path fill="url(#curlHollow)"
+      d="M 600 280 C 640 276 665 262 690 245 C 670 260 640 278 600 280 Z"/>
+
+    <!-- LAYER 4 (FRONT): UPPER BAND (top flap) — elongated to the certificate's actual top border line -->
+    <path fill="url(#upper)"
+      d="M -380 0
+         C -240 0 -80 0 80 0
+         C 200 0 300 10 375 25
+         C 470 45 570 90 650 130
+         C 685 145 706 168 708 195
+         C 706 235 690 262 600 280
+         C 560 282 520 272 482 266
+         C 455 268 440 280 425 298
+         C 415 312 408 325 398 335
+         C 340 332 260 290 190 240
+         C 120 190 30 140 -70 95
+         C -170 55 -270 25 -380 0 Z"/>
+
+    <!-- Upper band satin sheen overlay — matching top border -->
+    <path fill="url(#upperSheen)" opacity="0.65"
+      d="M -380 0
+         C -240 0 -80 0 80 0
+         C 200 0 300 10 375 25
+         C 470 45 570 90 650 130
+         C 685 145 706 168 708 195
+         C 706 235 690 262 600 280
+         C 560 282 520 272 482 266
+         C 455 268 440 280 425 298
+         C 415 312 408 325 398 335
+         C 340 332 260 290 190 240
+         C 120 190 30 140 -70 95
+         C -170 55 -270 25 -380 0 Z"/>
+
+  </g>
+</svg>
